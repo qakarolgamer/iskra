@@ -1,0 +1,16 @@
+title = "Iskra – konfiguracja Gitleaks"
+
+# Pełny zestaw domyślnych reguł Gitleaks (klucze AWS, GCP, GitHub, Stripe, JWT, klucze prywatne itd.).
+[extend]
+useDefault = true
+
+# Dodatkowa reguła: przypisania do zmiennych o „sekretnych” nazwach.
+[[rules]]
+id = "generic-secret-assignment"
+description = "Wartość przypisana do zmiennej wyglądającej na sekret"
+regex = '''(?i)(api[_-]?key|secret|token|passw(or)?d|private[_-]?key)\s*[:=]\s*['"][^'"\s]{12,}['"]'''
+tags = ["secret", "generic"]
+
+[allowlist]
+description = "Pliki-wzorce bez prawdziwych wartości"
+paths = ['''\.env\.example$''']

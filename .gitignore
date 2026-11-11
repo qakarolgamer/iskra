@@ -1,0 +1,38 @@
+# --- Sekrety i konfiguracja lokalna: NIGDY nie commitować ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+id_rsa*
+id_ed25519*
+secrets.*
+credentials*.json
+service-account*.json
+.npmrc
+.netrc
+
+# --- Zależności i build ---
+node_modules/
+dist/
+build/
+.cache/
+coverage/
+
+# --- Logi i pliki tymczasowe ---
+*.log
+npm-debug.log*
+*.tmp
+*.swp
+
+# --- System i edytory ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
